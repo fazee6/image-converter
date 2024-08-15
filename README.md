@@ -24,7 +24,7 @@ To set up FreeConvert4U locally, follow these steps:
 
 1. Clone the repository:
    ```
-   git clone https://github.com/yourusername/freeconvert4u.git
+   git clone https://github.com/fazee6/freeconvert4u.git
    cd freeconvert4u
    ```
 
@@ -79,7 +79,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## 📞 Support
 
-If you encounter any issues or have questions, please [open an issue](https://github.com/yourusername/freeconvert4u/issues) on GitHub.
+If you encounter any issues or have questions, please [open an issue](https://github.com/fazee6/freeconvert4u/issues) on GitHub.
 
 ---
 
