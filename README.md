@@ -20,7 +20,25 @@ Experience FreeConvert4U in action at [https://freeconvert4u.com](https://freeco
 
 ## 🛠️ Installation
 
-To set up FreeConvert4U locally, follow these steps:
+### Prerequisites
+
+Before setting up FreeConvert4U, ensure you have the following installed on your system:
+
+1. **Node.js**: FreeConvert4U requires Node.js version 14.x or higher. Download and install it from the [official Node.js website](https://nodejs.org/).
+
+2. **Ghostscript**: This is required for handling PDF conversions.
+   - For Windows: Download and install from the [Ghostscript website](https://www.ghostscript.com/download/gsdnld.html)
+   - For macOS: Install using Homebrew: `brew install ghostscript`
+   - For Linux: Install using apt: `sudo apt-get install ghostscript`
+
+3. **ImageMagick**: This is the core tool used for image conversions.
+   - For Windows: Download and install from the [ImageMagick Official Website](https://imagemagick.org/script/download.php)
+   - For macOS: Install using Homebrew: `brew install imagemagick`
+   - For Linux: Install using apt: `sudo apt-get install imagemagick`
+
+### Setup
+
+Once you have the prerequisites installed, follow these steps to set up FreeConvert4U:
 
 1. Clone the repository:
    ```
@@ -28,30 +46,25 @@ To set up FreeConvert4U locally, follow these steps:
    cd freeconvert4u
    ```
 
-2. Install dependencies:
+2. Install project dependencies:
    ```
    npm install
    ```
 
-3. Install ImageMagick:
-   - For Windows: Download and install from [ImageMagick Official Website](https://imagemagick.org/script/download.php)
-   - For macOS: `brew install imagemagick`
-   - For Linux: `sudo apt-get install imagemagick`
-
-4. Set up SSL certificates:
+3. Set up SSL certificates:
    - Generate SSL certificates using Let's Encrypt or a similar service.
    - Place the certificate files in the appropriate directory (default: `/etc/letsencrypt/live/freeconvert4u.com/`).
 
-5. Configure the server:
+4. Configure the server:
    - Update the paths to your SSL certificates in `server.js` if necessary.
    - Adjust other settings in `server.js` as needed (e.g., ports, file size limits).
 
-6. Start the server:
+5. Start the server:
    ```
    node server.js
    ```
 
-7. Access the application at `https://localhost:443` (or the port you configured).
+6. Access the application at `https://localhost:443` (or the port you configured).
 
 ## 🖥️ Usage
 
@@ -79,8 +92,8 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## 📞 Support
 
-If you encounter any issues or have questions, please [open an issue](https://github.com/fazee6/freeconvert4u/issues) on GitHub.
+If you encounter any issues or have questions, please [open an issue](https://github.com/fazee6/image-converter/issues) on GitHub.
 
 ---
 
-Made with ❤️ by [Your Name/Organization]
+Made with ❤️ by FreeConvert4U Team
