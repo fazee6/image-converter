@@ -1,0 +1,20 @@
+{
+  "name": "image-converter",
+  "version": "1.0.0",
+  "description": "An image conversion tool for specific formats",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "archiver": "^5.3.0",
+    "bmp-js": "^0.1.0",
+    "express": "^4.17.1",
+    "gifencoder": "^2.0.1",
+    "gm": "^1.25.0",
+    "multer": "^1.4.2",
+    "pdf-lib": "^1.17.1",
+    "pixel-png": "^0.0.1",
+    "sharp": "^0.28.3"
+  }
+}

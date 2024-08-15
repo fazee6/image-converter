@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreeConvert4U - Free Online Image Converter</title>
+    <meta name="description" content="Convert your images to any format for free with FreeConvert4U. Ultra-fast, supports multiple formats, and no registration required.">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .centered-drop-area {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 40px;
+            border: 3px dashed #007bff;
+            border-radius: 10px;
+            background-color: #f8f9fa;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .centered-drop-area:hover {
+            background-color: #e9ecef;
+            border-color: #0056b3;
+        }
+        .upload-icon {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px;
+        }
+        .select-images {
+            color: #007bff;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        /* Dark mode styles */
+        body.dark-mode {
+            background-color: #1a1a1a;
+            color: #f0f0f0;
+        }
+        body.dark-mode .centered-drop-area {
+            background-color: #2a2a2a;
+            border-color: #4a4a4a;
+            color: #f0f0f0;
+        }
+        body.dark-mode .centered-drop-area:hover {
+            background-color: #333333;
+            border-color: #5a5a5a;
+        }
+        body.dark-mode .select-images {
+            color: #4dabf7;
+        }
+        body.dark-mode h2, body.dark-mode h3, body.dark-mode h4, body.dark-mode h5 {
+            color: #f0f0f0;
+        }
+        body.dark-mode .btn-outline-primary {
+            color: #4dabf7;
+            border-color: #4dabf7;
+        }
+        body.dark-mode .btn-outline-primary:hover {
+            color: #1a1a1a;
+            background-color: #4dabf7;
+        }
+        body.dark-mode .btn-primary {
+            background-color: #4dabf7;
+            border-color: #4dabf7;
+        }
+        body.dark-mode .btn-primary:hover {
+            background-color: #3793d5;
+            border-color: #3793d5;
+        }
+    </style>
+</head>
+<body>
+    <header class="py-3">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <a href="/" class="text-decoration-none text-reset">
+                    <h1 class="m-0">FreeConvert4U</h1>
+                </a>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="darkModeToggle">
+                    <label class="form-check-label" for="darkModeToggle">Dark Mode</label>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="py-5">
+        <div class="container">
+            <div id="upload-page">
+                <h2 class="text-center mb-4">Convert your images into any format for free</h2>
+                <p class="text-center mb-5">Simply drop your images below to get started – No registration required!</p>
+                <div class="centered-drop-area mb-5" id="dropArea">
+                    <img src="upload-icon.svg" alt="Upload icon" class="upload-icon mb-3">
+                    <h3 class="h4 mb-3">Add Images</h3>
+                    <p class="mb-0">Drag & Drop or <span class="select-images">Select Images</span></p>
+                    <input type="file" id="fileInput" style="display: none;" accept=".jpeg,.jpg,.png,.gif,.webp,.bmp,.tiff,.heic,.svg,.tga,.psd,.eps,.avif,.pdf,.exr,.hdr,.cr2,.nef,.dng,.arw,.orf,.xbm,.wbmp,.dcm,.ras,.pgm,.pbm,.jbig,.cin,.dpx,.rla,.vicar,.djvu,.fl32,.mng,.pcx,.ppm,.xpm,.cut,.palm,.pict,.fax,.xwd,.info,.rad,.sun,.pwp,.fpx,.hrz,.man" multiple>
+                </div>
+                
+                <!-- Features Section -->
+                <section class="features mb-5">
+                    <h3 class="text-center mb-4">Why Choose FreeConvert4U?</h3>
+                    <div class="row justify-content-center text-center">
+                        <div class="col-md-4 mb-4">
+                            <img src="speed-icon.svg" alt="Ultra-fast icon" class="feature-icon mb-3">
+                            <h4>Ultra-Fast Conversion</h4>
+                            <p>Convert your images in seconds with our optimized algorithms.</p>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <img src="format-icon.svg" alt="Multiple formats icon" class="feature-icon mb-3">
+                            <h4>Multiple Formats</h4>
+                            <p>Support for a wide range of image formats to meet all your needs.</p>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <img src="free-icon.svg" alt="Free icon" class="feature-icon mb-3">
+                            <h4>100% Free</h4>
+                            <p>No hidden fees or subscriptions. Convert as many images as you want.</p>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <img src="ad-free-icon.svg" alt="No ads icon" class="feature-icon mb-3">
+                            <h4>Ad-Free Experience</h4>
+                            <p>Enjoy a clean, distraction-free conversion process.</p>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <img src="no-registration-icon.svg" alt="No registration icon" class="feature-icon mb-3">
+                            <h4>No Registration</h4>
+                            <p>Start converting immediately without creating an account.</p>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <img src="privacy-icon.svg" alt="Privacy icon" class="feature-icon mb-3">
+                            <h4>Privacy Focused</h4>
+                            <p>Your files are deleted immediately after conversion for your privacy.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Supported Formats Section -->
+<section class="supported-formats mb-5">
+    <h3 class="text-center mb-4">Supported Image Formats</h3>
+    <div class="row">
+        <div class="col-md-4 mb-3">
+            <h5>Convert to JPEG</h5>
+            <p>Ideal for photographs; offers great compression without significant loss of quality. Perfect for web use!</p>
+        </div>
+        <div class="col-md-4 mb-3">
+            <h5>Convert to PNG</h5>
+            <p>Best for images requiring transparency and high quality. Great for logos and graphics!</p>
+        </div>
+        <div class="col-md-4 mb-3">
+            <h5>Convert to GIF</h5>
+            <p>Perfect for simple animations and graphics. Use it for eye-catching web content!</p>
+        </div>
+        <div class="col-md-4 mb-3">
+            <h5>Convert to WEBP</h5>
+            <p>Offers superior compression and quality for web images, making your site faster!</p>
+        </div>
+        <div class="col-md-4 mb-3">
+            <h5>Convert to BMP</h5>
+            <p>Preserves image quality without compression, ideal for high-quality edits!</p>
+        </div>
+        <div class="col-md-4 mb-3">
+            <h5>Convert to TIFF</h5>
+            <p>High-quality format for printing and publishing. Perfect for professional photography!</p>
+        </div>
+        <div class="col-md-4 mb-3">
+            <h5>Convert to HEIC</h5>
+            <p>Offers better compression than JPEG, saving space on your Apple devices!</p>
+        </div>
+        <div class="col-md-4 mb-3">
+            <h5>Convert to SVG</h5>
+            <p>Ideal for logos and icons, scalable without loss of quality. Perfect for web graphics!</p>
+        </div>
+        <div class="col-md-4 mb-3">
+            <h5>Convert to ICO</h5>
+            <p>Perfect for creating favicons and application icons in Windows!</p>
+        </div>
+        <div class="col-md-4 mb-3">
+            <h5>Convert to TGA</h5>
+            <p>Commonly used in video and animation; great for high-quality visual effects!</p>
+        </div>
+        <div class="col-md-4 mb-3">
+            <h5>Convert to PSD</h5>
+            <p>Preserves layers and editing capabilities, essential for Photoshop users!</p>
+        </div>
+        <div class="col-md-4 mb-3">
+            <h5>Convert to EPS</h5>
+            <p>Common in professional printing and design; perfect for vector graphics!</p>
+        </div>
+        <div class="col-md-4 mb-3">
+            <h5>Convert to AVIF</h5>
+            <p>A modern format that provides excellent compression and quality for web images!</p>
+        </div>
+        <div class="col-md-4 mb-3">
+            <h5>Convert to PDF</h5>
+            <p>Ideal for sharing and printing images; maintains quality across devices!</p>
+        </div>
+        <div class="col-md-4 mb-3">
+            <h5>Convert to EXR</h5>
+            <p>Used in film and video production for high dynamic range imaging!</p>
+        </div>
+        <div class="col-md-4 mb-3">
+            <h5>Convert to HDR</h5>
+            <p>Used in photography for capturing a wider range of colors and brightness!</p>
+        </div>
+        <div class="col-md-4 mb-3">
+            <h5>Convert to RAW (CR2, NEF, DNG, ARW, ORF)</h5>
+            <p>Maximize quality and editing flexibility with camera-native formats!</p>
+        </div>
+        <div class="col-md-4 mb-3">
+            <h5>Convert to XBM</h5>
+            <p>Used for creating cursors and icons in X Window System!</p>
+        </div>
+        <div class="col-md-4 mb-3">
+            <h5>Convert to WBMP</h5>
+            <p>Monochrome graphics format for mobile devices. Perfect for low-bandwidth scenarios!</p>
+        </div>
+        <div class="col-md-4 mb-3">
+            <h5>Convert to DICOM</h5>
+            <p>Essential for medical imaging; stores and transmits medical images!</p>
+        </div>
+        <div class="col-md-4 mb-3">
+            <h5>Convert to RAS</h5>
+            <p>Used in Sun Microsystems' operating systems for raster graphics!</p>
+        </div>
+        <div class="col-md-4 mb-3">
+            <h5>Convert to PGM</h5>
+            <p>A grayscale image format, ideal for simple graphics!</p>
+        </div>
+        <div class="col-md-4 mb-3">
+            <h5>Convert to PBM</h5>
+            <p>Black and white image format, perfect for monochrome images!</p>
+        </div>
+        <div class="col-md-4 mb-3">
+            <h5>Convert to JBIG</h5>
+            <p>Designed for lossless compression of binary images, great for document imaging!</p>
+        </div>
+        <div class="col-md-4 mb-3">
+            <h5>Convert to CIN</h5>
+            <p>Commonly used in digital film work, great for high-quality images!</p>
+        </div>
+        <div class="col-md-4 mb-3">
+            <h5>Convert to DPX</h5>
+            <p>Used in motion picture film scanning and processing, preserving high-quality images!</p>
+        </div>
+        <div class="col-md-4 mb-3">
+            <h5>Convert to RLA</h5>
+            <p>Used in computer animation; great for visual effects!</p>
+        </div>
+        <div class="col-md-4 mb-3">
+            <h5>Convert to VICAR</h5>
+            <p>Used by NASA for planetary images; great for scientific imaging!</p>
+        </div>
+        <div class="col-md-4 mb-3">
+            <h5>Convert to DJVU</h5>
+            <p>Specialized for scanned images, particularly suitable for textual images!</p>
+        </div>
+        <div class="col-md-4 mb-3">
+            <h5>Convert to FL32</h5>
+            <p>Used for high dynamic range imaging and scientific data!</p>
+        </div>
+        <div class="col-md-4 mb-3">
+            <h5>Convert to MNG</h5>
+            <p>Supports multiple images, similar to animated PNGs; great for animations!</p>
+        </div>
+        <div class="col-md-4 mb-3">
+            <h5>Convert to PCX</h5>
+            <p>One of the earliest graphics formats, ideal for legacy applications!</p>
+        </div>
+        <div class="col-md-4 mb-3">
+            <h5>Convert to PPM</h5>
+            <p>A basic color image format, easy to use for simple graphics!</p>
+        </div>
+        <div class="col-md-4 mb-3">
+            <h5>Convert to XPM</h5>
+            <p>Used for creating icon pixmaps in X Window System!</p>
+        </div>
+        <div class="col-md-4 mb-3">
+            <h5>Convert to CUT</h5>
+            <p>Dr. Halo image format, used in early raster graphics applications!</p>
+        </div>
+        <div class="col-md-4 mb-3">
+            <h5>Convert to PALM</h5>
+            <p>Used for images on early Palm OS devices; ideal for legacy applications!</p>
+        </div>
+        <div class="col-md-4 mb-3">
+            <h5>Convert to PICT</h5>
+            <p>Used in early Macintosh computers for graphics and printing!</p>
+        </div>
+        <div class="col-md-4 mb-3">
+            <h5>Convert to FAX</h5>
+            <p>Used for fax transmissions and some document imaging systems!</p>
+        </div>
+        <div class="col-md-4 mb-3">
+            <h5>Convert to XWD</h5>
+            <p>Used for capturing screenshots in X Window System!</p>
+        </div>
+        <div class="col-md-4 mb-3">
+            <h5>Convert to INFO</h5>
+            <p>Stores metadata about images, useful for organizing your files!</p>
+        </div>
+        <div class="col-md-4 mb-3">
+            <h5>Convert to RAD</h5>
+            <p>Used in computer graphics for high dynamic range imaging; great for visual effects!</p>
+        </div>
+        <div class="col-md-4 mb-3">
+            <h5>Convert to SUN</h5>
+            <p>Used in Sun Microsystems' operating systems for raster graphics!</p>
+        </div>
+        <div class="col-md-4 mb-3">
+            <h5>Convert to PWP</h5>
+            <p>A proprietary format used by a photo finishing company; ideal for legacy images!</p>
+        </div>
+        <div class="col-md-4 mb-3">
+            <h5>Convert to FPX</h5>
+            <p>Designed for high-resolution images with multiple resolution versions!</p>
+        </div>
+        <div class="col-md-4 mb-3">
+            <h5>Convert to HRZ</h5>
+            <p>Used in amateur radio for image transmission; perfect for low-bandwidth scenarios!</p>
+        </div>
+        <div class="col-md-4 mb-3">
+            <h5>Convert to MAN</h5>
+            <p>Used in Unix systems for storing image metadata; great for organizing your files!</p>
+        </div>
+    </div>
+</section>
+				<!-- About Me Section -->
+                <section class="about-me mb-5" id="about-me">
+                    <h3 class="text-center mb-4">About the Creator</h3>
+                    <div class="row justify-content-center align-items-center">
+                        <div class="col-md-4 mb-4 text-center">
+                            <img src="https://mcsaguru.com/wp-content/webp-express/webp-images/uploads/2021/08/Muhammad-Faizan.jpeg.webp" 
+                                 alt="Muhammad Faizan" 
+                                 class="rounded-circle img-fluid" 
+                                 style="max-width: 200px;">
+                        </div>
+                        <div class="col-md-8">
+                            <p>Hi, I'm Muhammad Faizan, a hobbyist programmer and scripter with a passion for building cool and useful web applications. 
+                                I love exploring new technologies and pushing the boundaries of what's possible with code. </p>
+                            <p>When I'm not coding, you can find me sharing my knowledge and insights on my tech blog, <a href="https://mcsaguru.com" target="_blank" rel="noopener noreferrer">MCSAGuru.com</a>. 
+                                I write about a variety of topics, from web development and programming tutorials to the latest tech news and trends.</p>
+                            <p>I believe that technology has the power to change the world, and I'm committed to using my skills to make a positive impact. 
+                                This free online image converter is just one example of my passion for creating tools that are accessible and beneficial to everyone. </p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div id="conversion-page" style="display: none;">
+                <div class="mb-4 text-center">
+                    <select id="outputFormat" class="form-select d-inline-block w-auto">
+                        <option value="" disabled selected>Select format</option>
+                        <!-- Options will be dynamically added here -->
+                    </select>
+                </div>
+                <h2 class="text-center mb-3">Convert to JPG</h2>
+                <p class="text-center mb-5">Convert your images to the selected format. Click on a format below to change the output format.</p>
+                <div id="fileList" class="mb-4"></div>
+                <div class="d-flex justify-content-center gap-3 mb-5">
+                    <button id="addMore" class="btn btn-outline-primary">+ Add More</button>
+                    <button id="clearAll" class="btn btn-outline-danger">Clear All</button>
+                    <button id="convertAll" class="btn btn-primary">Convert All</button>
+                </div>
+                <div id="progressContainer" class="progress mb-3" style="display: none;">
+                    <div id="progressBar" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <p id="progressText" class="text-center mb-4" style="display: none;">Starting conversion...</p>
+                <div id="queuePositionContainer" class="text-center mb-4" style="display: none;">
+                    <p id="queuePositionText">Your position in queue: 1</p>
+                </div>
+                <div class="format-list">
+                    <h3 class="h4 text-center mb-4">Convert to:</h3>
+                    <div class="format-grid">
+                        <!-- Format buttons will be dynamically added here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-3 mt-5">
+        <div class="container">
+            <p class="text-center mb-0">&copy; 2023 FreeConvert4U. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

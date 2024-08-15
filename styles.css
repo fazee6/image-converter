@@ -1,0 +1,242 @@
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --background-color: #f8f9fa;
+    --text-color: #333;
+    --border-color: #dee2e6;
+    --hover-color: #e9ecef;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.dark-mode {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --background-color: #222;
+    --text-color: #f8f9fa;
+    --border-color: #444;
+    --hover-color: #333;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.container {
+    max-width: 1200px;
+}
+
+.drop-area {
+    background-color: var(--background-color);
+    border: 2px dashed var(--border-color);
+    border-radius: 10px;
+    padding: 60px 40px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.drop-area:hover {
+    background-color: var(--hover-color);
+    border-color: var(--primary-color);
+}
+
+.upload-icon {
+    width: 80px;
+    height: 80px;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.drop-area:hover .upload-icon {
+    opacity: 1;
+}
+
+.select-images {
+    color: var(--primary-color);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.feature-icon {
+    width: 50px;
+    height: 50px;
+}
+
+/* File List Styles */
+.file-item {
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.file-item:hover {
+    background-color: var(--hover-color);
+}
+
+.file-info {
+    display: flex;
+    align-items: center;
+}
+
+.file-icon {
+    width: 36px;
+    height: 36px;
+    margin-right: 15px;
+}
+
+.file-details .file-name {
+    font-weight: 600;
+    margin: 0;
+    color: var(--text-color);
+}
+
+.file-details .file-size {
+    font-size: 0.9em;
+    color: #6c757d;
+    margin: 0;
+}
+
+.remove-file {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #dc3545;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.remove-file:hover {
+    color: #c82333;
+}
+
+/* Format List Styles */
+.format-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 15px;
+    justify-content: center;
+}
+
+.format-grid button {
+    padding: 10px 15px;
+    font-size: 0.9em;
+    font-weight: 600;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.1s ease;
+}
+
+.format-grid button:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Custom Bootstrap Overrides */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+    border-color: #2980b9;
+}
+
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.progress-bar {
+    background-color: var(--primary-color);
+}
+
+/* New Styles for Features Section */
+.features {
+    background-color: var(--background-color);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.features h3 {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.features h4 {
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.features p {
+    font-size: 0.9em;
+    color: var(--text-color);
+}
+
+/* New Styles for Supported Formats Section */
+.supported-formats {
+    background-color: var(--background-color);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.supported-formats h3 {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.supported-formats h5 {
+    font-size: 1em;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.supported-formats p {
+    font-size: 0.85em;
+    color: var(--text-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .features, .supported-formats {
+        padding: 20px;
+    }
+
+    .format-grid {
+        grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+    }
+}
